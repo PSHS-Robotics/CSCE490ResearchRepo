@@ -1,0 +1,88 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple, editable personal website.">
+    <title>Your Name | Home</title>
+    <link rel="stylesheet" href="{% static 'pages/site.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="wordmark" href="#home">YOUR NAME<span>.</span></a>
+        <nav aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="status-dot"></span> A WEBSITE ABOUT ME</p>
+                <h1>A little corner<br>of the <span>internet.</span></h1>
+                <p class="intro">Hi, I’m Your Name. I’m a [student, creator, or curious human] who enjoys [something you love doing]. This is where I share a bit about myself and what I’m working on.</p>
+                <a class="button" href="#about">Get to know me <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-art" aria-label="Decorative abstract illustration" role="img">
+                <div class="sun"></div>
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="art-note">Currently<br>making things<br>happen <span>✳</span></div>
+                <div class="art-caption">EST. [YOUR YEAR]</div>
+            </div>
+            <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span>01 — 03</span></div>
+        </section>
+
+        <section class="about section-wrap" id="about">
+            <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
+            <div class="section-content">
+                <h2>Curious by nature.<br><span>Making things along the way.</span></h2>
+                <p>Use this space to introduce yourself. What do you care about? What are you learning, building, or hoping to do? A few honest sentences are more than enough to make this page yours.</p>
+            </div>
+        </section>
+
+        <section class="projects section-wrap" id="projects">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">02 / THINGS I’VE MADE</p>
+                    <h2>Your projects<span>.</span></h2>
+                </div>
+                <p class="section-hint">A few things I’m proud of.</p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <span class="project-number">01</span>
+                    <div><h3>Project one</h3><p>Tell people what it is and why you made it.</p></div>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="project-card">
+                    <span class="project-number">02</span>
+                    <div><h3>Project two</h3><p>Add another project, hobby, or small win.</p></div>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                </article>
+                <article class="project-card">
+                    <span class="project-number">03</span>
+                    <div><h3>Project three</h3><p>It can be a work in progress, too.</p></div>
+                    <span class="project-arrow" aria-hidden="true">↗</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <p class="eyebrow">03 / LET’S CONNECT</p>
+            <h2>Have a good one.<br><span>Or make one.</span></h2>
+            <p>Want to chat, collaborate, or just say hi? I’d love to hear from you.</p>
+            <a class="button button-light" href="mailto:hello@example.com">hello@example.com <span aria-hidden="true">↗</span></a>
+        </section>
+    </main>
+
+    <footer>
+        <a class="wordmark" href="#home">YOUR NAME<span>.</span></a>
+        <p>Made with care, by me. © 2026</p>
+        <a href="#home">Back to top ↑</a>
+    </footer>
+</body>
+</html>
