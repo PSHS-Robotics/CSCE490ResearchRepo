@@ -7,6 +7,6 @@ class HomePageTests(TestCase):
         response = self.client.get(reverse('pages:home'))
 
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'A little corner')
-        self.assertContains(response, 'internet.')
-        self.assertContains(response, 'Your projects')
+        self.assertContains(response, 'Find your next')
+        self.assertContains(response, 'The collection')
+        self.assertContains(response, 'Books to explore')
