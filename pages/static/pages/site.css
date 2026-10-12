@@ -393,6 +393,116 @@ code {
     letter-spacing: .1em;
 }
 
+.location-section {
+    scroll-margin-top: 20px;
+}
+
+.coordinate-form {
+    margin: 16px 0 0;
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.coordinate-field {
+    display: grid;
+    gap: 5px;
+}
+
+.coordinate-field label {
+    color: #68767d;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.coordinate-field input {
+    width: 150px;
+    min-height: 38px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--ink);
+    font: inherit;
+    font-size: 12px;
+}
+
+.coordinate-field input:focus {
+    outline: 2px solid #9bc3d4;
+    outline-offset: 1px;
+}
+
+.coordinate-form .primary-link {
+    min-height: 38px;
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-size: 11px;
+}
+
+.coordinate-form :disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+.coordinate-message {
+    flex-basis: 100%;
+    min-height: 16px;
+    margin: 0;
+    color: #68767d;
+    font-size: 11px;
+}
+
+.map-frame {
+    width: 100%;
+    min-height: 320px;
+    margin-top: 17px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background-color: #edf1ed;
+    background-image:
+        linear-gradient(35deg, transparent 46%, #fff 47%, #fff 49%, transparent 50%),
+        linear-gradient(145deg, transparent 43%, #dbe5dc 44%, #dbe5dc 47%, transparent 48%);
+    background-size: 145px 120px, 190px 150px;
+}
+
+.map-status,
+.map-key-help {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(90%, 420px);
+    margin: 0;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    color: #68767d;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.map-key-help p {
+    margin: 0;
+}
+
+.map-key-help p + p {
+    margin-top: 8px;
+}
+
+.map-key-help p strong {
+    color: var(--ink);
+}
+
+.map-pin {
+    color: var(--blue);
+    font-size: 28px;
+}
+
 .book-section {
     padding-top: 30px;
 }

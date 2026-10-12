@@ -24,6 +24,7 @@
                 <a class="nav-link" href="#authors"><span aria-hidden="true">♙</span> Authors</a>
                 <a class="nav-link" href="#genres"><span aria-hidden="true">◇</span> Genres</a>
                 <a class="nav-link" href="#languages"><span aria-hidden="true">文</span> Languages</a>
+                <a class="nav-link" href="#location"><span aria-hidden="true">⌖</span> Location</a>
             </nav>
 
             <div class="sidebar-note">
@@ -85,6 +86,43 @@
                 </div>
             </section>
 
+            <section id="location" aria-labelledby="location-title">
+
+                <form class="coordinate-form" id="coordinate-form">
+                    <div>
+                        <label for="latitude">Latitude</label>
+                        <input id="latitude" name="latitude" type="number" min="-90" max="90" step="any" value="38.8977" required {% if not google_maps_api_key %}disabled{% endif %}>
+                    </div>
+                    <div\>
+                        <label for="longitude">Longitude</label>
+                        <input id="longitude" name="longitude" type="number" min="-180" max="180" step="any" value="-77.0365" required {% if not google_maps_api_key %}disabled{% endif %}>
+                    </div>
+                    <button class="primary-link" type="submit" {% if not google_maps_api_key %}disabled{% endif %}>Move map pin <span aria-hidden="true">→</span></button>
+                    <p class="coordinate-message" id="coordinate-message" role="status" aria-live="polite"></p>
+                </form>
+                <div
+                    class="map-frame"
+                    id="library-map"
+                    data-lat="38.8977"
+                    data-lng="-77.0365"
+                    data-zoom="13"
+                    data-api-key="{{ google_maps_api_key }}"
+                    role="region"
+                    aria-label="Google map showing the placeholder library location"
+                >
+                    {% if google_maps_api_key %}
+                        <p class="map-status" id="map-status" role="status">Loading the map…</p>
+                    {% else %}
+                        <div class="map-key-help">
+                            <p>$env:GOOGLE_MAPS_API_KEY = "YOUR_VALID_KEY"</p>
+                            <p>.\.venv\Scripts\python.exe manage.py runserver</p>
+                            <p>AIzaSyCM8fkTI0Wr3sAlAbKTxLkbT6J_Y5LoeYc</p>
+                            <p>Latitude: 34.000754 Longitude: -81.0352313</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </section>
+
             <section class="catalog-section book-section" id="books">
                 <div class="section-title">
                     <div>
@@ -139,5 +177,8 @@
             </footer>
         </main>
     </div>
+    {% if google_maps_api_key %}
+        <script src="{% static 'pages/maps.js' %}" defer></script>
+    {% endif %}
 </body>
 </html>
